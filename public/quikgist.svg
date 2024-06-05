@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <g class="layer">
+  <title>Layer 1</title>
+  <line fill="none" id="svg_4" stroke="#ff7f00" stroke-width="9" x1="83" x2="554.58" y1="210" y2="210"/>
+  <text fill="#ff7f00" font-family="Sans-serif" font-size="200" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0) matrix(0.987743 0 0 1.04026 0.827591 -0.635526)" x="312" xml:space="preserve" y="197">QUIK</text>
+  <text fill="#007fff" font-family="Sans-serif" font-size="200" id="svg_3" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1.06372 0 0 1.11272 -2.3632 -51.0832)" x="297.18" xml:space="preserve" y="388.89">GIST</text>
+ </g>
+</svg>

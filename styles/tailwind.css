@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Custom utility styles*/
+.customWidth100{
+    overflow-x:hidden;
+    width:100vw;
+}
+.customCenteredImage{
+    margin: auto;
+}
+/*Scroll bar custom styles*/
+::-webkit-scrollbar{
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: var(--card-border-color, #2a2d3f);
+    border: 4px solid transparent;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
