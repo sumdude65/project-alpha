@@ -26,7 +26,7 @@ export default async function BlogPost({ params }) {
         title,
         publishedAt,
         mainImage
-    }`)
+    }`,{next: { revalidate: 600} })     //refresh cache every 10 mins
     if (post.length < 1) notFound()     //redirect to 404 if the post doesn't exist
     return (
         <main className='grid md:grid-cols-[1fr_65%_1fr] customWidth100'> {/**defines the main lauout of the blog using grid */}

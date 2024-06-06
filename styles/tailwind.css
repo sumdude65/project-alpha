@@ -10,6 +10,7 @@
 .customCenteredImage{
     margin: auto;
 }
+
 /*Scroll bar custom styles*/
 ::-webkit-scrollbar{
     width: 12px;

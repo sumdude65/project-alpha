@@ -9,7 +9,7 @@ export default function ThemeController() {
         if (theme === 'business') setTheme('garden')
     }
     return (
-        <label className="swap swap-rotate">
+        <label className="swap swap-rotate text-secondary hover:text-primary">
 
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" className="theme-controller" value={theme} onClick={handleClick} />
