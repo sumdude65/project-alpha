@@ -1,5 +1,5 @@
 import React from "react";
-import { UserIcon,ShareIcon } from "@sanity/icons";
+import { UserIcon,ShareIcon, DocumentVideoIcon } from "@sanity/icons";
 
 export function InternalLinkRenderer(props) {
     return (
@@ -18,6 +18,17 @@ export function ShareRenderer(props){
             {props.renderDefault(props)}
             <a contentEditable={false} href={props.value.href}>
                 <ShareIcon />
+            </a>
+        </span>
+    )
+}
+
+export function EmbedVideoRenderer(props){
+    return (
+        <span>
+            {props.renderDefault(props)}
+            <a contentEditable={false} href={props.value.href}>
+                <DocumentVideoIcon />
             </a>
         </span>
     )

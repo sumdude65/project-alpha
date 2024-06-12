@@ -6,7 +6,7 @@ import "../../styles/globals.css"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "InfoQuill",
+  title: "QuikGist",
   description: "Nigeria's biggest gist site",
 };
 

@@ -1,5 +1,6 @@
 /**Custom styling for portable text components */
 
+import EmbedVideo from "@/app/components/embedVideo"
 import ImageComponent from "@/app/components/imageComponent"
 import SharePost from "@/app/components/sharePost"
 import Link from "next/link"
@@ -38,6 +39,11 @@ function InternalLinkAnnotation(props) {
     )
 }
 
+function EmbedVideoAnnotation({value}){
+    const {platform, videoUrl} = value
+    return <EmbedVideo platform={platform} videoUrl={videoUrl}  />
+}
+
 /** Define custom styling for portable text elements
  * This is passed to the portable text component as components prop
  * for more info https://github.com/portabletext/react-portabletext
@@ -53,5 +59,6 @@ export const portableTextComponents = {
         link: LinkComponent,
         share: ShareAnnotation,
         internalLink: InternalLinkAnnotation,
+        embedVideo: EmbedVideoAnnotation,
     }
 }
