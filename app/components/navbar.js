@@ -34,7 +34,12 @@ export default function Navbar() {
     >
       <div className="lg:flex-none">
         <Link href='/'>
-          <Image className=" not-prose" src='/quikgist2.0.svg' width={125} height={125} alt='logo' />
+          <Image 
+          className=" not-prose" 
+          src='/quikgist2.0.svg' 
+          width={125} 
+          height={125} 
+          alt='logo' />
         </Link>
       </div>
       <div className="flex justify-end flex-1">

@@ -8,5 +8,5 @@ const imageBuilder = createImageUrlBuilder({
 })
 
 export const urlForImage = (source) => {
-  return imageBuilder?.image(source).auto('format').width(300).height(400).fit('max').url() //for more info: https://github.com/sanity-io/image-url
+  return imageBuilder?.image(source).auto('format').width(1920).height(1080).fit('max').url() //for more info: https://github.com/sanity-io/image-url
 }

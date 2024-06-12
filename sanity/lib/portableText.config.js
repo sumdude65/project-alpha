@@ -1,32 +1,40 @@
 /**Custom styling for portable text components */
 
-import { urlForImage } from "./image"
-import Image from "next/image"
+import ImageComponent from "@/app/components/imageComponent"
+import SharePost from "@/app/components/sharePost"
+import Link from "next/link"
 
-
-function ImageComponent({ value }) {
-    const { asset, alt } = value
-    const url = urlForImage(asset) //generate image url from asset object
-    return <figure>
-        <Image src={url}
-            alt={alt || 'Image'}
-            width={250} // You can adjust these values
-            height={250} // You can adjust these values
-            className="customCenteredImage"
-        />
-        <figcaption className="font-bold" style={{textAlign:"center"}}>{alt}</figcaption>
-    </figure>
-}
 function BlockquoteComponent({ children }) {
     return <blockquote className='border-primary'>{children}</blockquote>
 }
-function linkComponent(props) {
+function LinkComponent(props) {
     const { children, value } = props
     const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
     return (
-        <a href={value.href} rel={rel} className="text-primary">
+        <a href={value.href} rel={rel} className="no-underline text-primary not-prose hover:underline">
             {children}
         </a>
+    )
+}
+function ShareAnnotation(props) {
+    const { value } = props
+    console.log();
+    const { url, title } = value
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+    return <SharePost
+        postTitle={title}
+        postUrl={`${baseUrl}/blog/${url}`}
+    />
+}
+
+function InternalLinkAnnotation(props) {
+    const { children, value } = props
+    const { url } = value
+    const href = `/blog/${url}`
+    return (
+        <Link href={href} className="not-prose text-primary hover:underline">
+            {children}
+        </Link>
     )
 }
 
@@ -42,6 +50,8 @@ export const portableTextComponents = {
         blockquote: BlockquoteComponent,
     },
     marks: {
-        link: linkComponent
+        link: LinkComponent,
+        share: ShareAnnotation,
+        internalLink: InternalLinkAnnotation,
     }
 }
