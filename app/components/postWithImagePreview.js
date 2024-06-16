@@ -1,6 +1,7 @@
 import ImageComponent from "./imageComponent";
 import Link from "next/link";
 
+/**This component renders a post title and the main image as a preview in post lists like homepage */
 
 export default function PostWithImage({title, url, image}){
     return (

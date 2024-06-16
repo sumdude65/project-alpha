@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+/**Allows the user share the current post to whatsapp, this component appears inline as they scroll */
+
 const SharePostWA = ({ postUrl, postTitle }) => {
   const whatsappBaseUrl = 'https://wa.me/?text=';
 

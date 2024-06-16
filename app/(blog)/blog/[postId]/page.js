@@ -21,6 +21,7 @@ export const dynamicParams = true;
 
 export default async function BlogPost({ params }) {
     const { postId } = params
+    console.log(params);
     //This fetch is faulty because it assumes all internalLinks are directed to authors, create an annotation for authors and true internal links
     const post = await client.fetch(`*[ _id == "${postId}" ]{
         body[]{

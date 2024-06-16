@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+/**This component renders the time a post was published on the studio, as well as the author */
+
 export default function DateController({ dateString, author }) {
     const date = new Date(dateString);
 
@@ -14,7 +16,7 @@ export default function DateController({ dateString, author }) {
     });
     return (
         <em>
-            Published at {formattedDate} by <Link className="no-underline text-primary not-prose hover:underline" href=''>
+            Published at {formattedDate} by <Link className="no-underline text-primary not-prose hover:underline" href={`/author/${author._id}`}>
                 {author.name}
             </Link>
         </em>

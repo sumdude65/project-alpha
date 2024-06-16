@@ -1,5 +1,6 @@
 "use client"
 
+/**Allows the user share the current post to any supported platform, appears at the top of each post */
 
 import { usePathname } from 'next/navigation';
 import {

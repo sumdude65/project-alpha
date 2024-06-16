@@ -47,8 +47,7 @@ export default function Navbar() {
           {/**Normal navbar for larger screens */}
           <div className='hidden md:block text-secondary '>
             <Link href='/' className="btn btn-ghost rounded-btn hover:text-primary">Home</Link>
-            <Link href='/about' className="btn btn-ghost rounded-btn hover:text-primary">About</Link>
-            <Link href='/contact' className="btn btn-ghost rounded-btn hover:text-primary">Contact Us</Link>
+            <Link href='/aboutUs' className="btn btn-ghost rounded-btn hover:text-primary">About</Link>
           </div>
           {/**Modal menu for smaller screens */}
           {/* Open the modal using document.getElementById('ID').showModal() method */}

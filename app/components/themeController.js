@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 
+/**Allows the user easily switch out preferred theme */
+
 export default function ThemeController() {
     const [theme, setTheme] = useState('garden')
     function handleClick() {

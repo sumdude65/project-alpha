@@ -1,6 +1,9 @@
 import { urlForImage } from "@/sanity/lib/image"
 import Image from "next/image"
 
+/**This component renders an image anywhere, it is used in rendering portable text images in sanity/lib
+ * As well as anywhere else in the app where an image is to be rendered from sanity content lake
+ */
 
 export default function ImageComponent({ value, showAlt = true }) {
     const { asset, alt } = value
