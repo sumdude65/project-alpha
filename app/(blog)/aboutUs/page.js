@@ -3,7 +3,7 @@ export default function AboutUs() {
         <main className="customWidth100 w-screen px-4">
             <div className="md:w-2/3 mx-auto">
                 <h1>About Us</h1>
-                <p>Welcome to QuikGist, your premier destination for the latest gist and news in Naija and beyond. We're passionate about bringing you the most current, exciting,
+                <p>Welcome to QuikGist, your premier destination for the latest gist and news in Naija and beyond. We&apos;re passionate about bringing you the most current, exciting,
                     and relevant stories from Nigeria and West Africa, all in one place.</p>
                 <h2>Our Mission</h2>
                 <p>At QuikGist, our mission is to inform, entertain, and inspire our audience with timely and accurate news coverage. We aim to be your go-to source for everything happening in Naija and the wider West African region, from breaking news and politics to entertainment and lifestyle stories.
