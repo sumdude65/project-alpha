@@ -9,7 +9,7 @@ module.exports = {
     require('daisyui') //this order allows daisy inherit styling from typography
   ],
   daisyui: {
-    themes: ["garden","business"],  //first theme is the default
+    themes: ["acid","business"],  //first theme is the default, adjust themecontroller component
     //darkTheme: "business"
   }
 }

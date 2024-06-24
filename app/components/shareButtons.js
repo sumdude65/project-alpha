@@ -24,22 +24,22 @@ const ShareButtons = ({ title }) => {
         <div >
             <h5 className=''>Share with Friends:</h5>
             <div className="flex gap-2">
-                <FacebookShareButton url={url} quote={title} hashtag="#yourHashtag">
+                <FacebookShareButton url={url} quote={title} hashtag="#yourHashtag" className='hover:scale-110 transition-transform'>
                     <FacebookIcon size={32} round={true} />
                 </FacebookShareButton>
-                <FacebookMessengerShareButton appId={"1182454912911040"}>
+                <FacebookMessengerShareButton appId={"1182454912911040"} className='hover:scale-110 transition-transform'>
                     <FacebookMessengerIcon size={32} round={true} />
                 </FacebookMessengerShareButton>
-                <WhatsappShareButton url={url} title={title} separator=":: ">
+                <WhatsappShareButton url={url} title={title} separator=":: " className='hover:scale-110 transition-transform'>
                     <WhatsappIcon size={32} round={true} />
                 </WhatsappShareButton>
-                <LinkedinShareButton url={url} title={title} summary="Check this out!">
+                <LinkedinShareButton url={url} title={title} summary="Check this out!" className='hover:scale-110 transition-transform'>
                     <LinkedinIcon size={32} round={true} />
                 </LinkedinShareButton>
-                <TwitterShareButton url={url} title={title} hashtags={["yourHashtag"]}>
+                <TwitterShareButton url={url} title={title} hashtags={["yourHashtag"]} className='hover:scale-110 transition-transform'>
                     <XIcon size={32} round={true} />
                 </TwitterShareButton>
-                <RedditShareButton url={url} title={title}>
+                <RedditShareButton url={url} title={title} className='hover:scale-110 transition-transform'>
                     <RedditIcon size={32} round={true} />
                 </RedditShareButton>
             </div>

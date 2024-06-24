@@ -4,6 +4,8 @@ import Footer from "../components/footer";
 import "../../styles/tailwind.css"
 import "../../styles/globals.css"
 const inter = Inter({ subsets: ["latin"] });
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity";
 
 export const metadata = {
   title: "QuikGist",
@@ -14,8 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} prose customWidth100`}>
+      {draftMode().isEnabled && (
+          <div>
+            <a className="p-4 bg-blue-300 block" href="/api/disable-draft">
+              Disable preview mode
+            </a>
+          </div>
+        )}
         <Navbar />
         {children}
+        {draftMode().isEnabled && <VisualEditing />}
         <Footer />
       </body>
     </html>

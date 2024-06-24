@@ -29,7 +29,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="navbar bg-base-300 box px-5 top-0 sticky z-50 transition-opacity border-b-2 border-primary customWidth100"
+    <nav className="navbar bg-purple-100 box px-5 top-0 sticky z-50 transition-opacity border-b-2 border-secondary customWidth100"
       style={{ opacity: navbarOpacity }}
     >
       <div className="lg:flex-none">
@@ -46,15 +46,15 @@ export default function Navbar() {
         <div className="flex items-stretch">
           {/**Normal navbar for larger screens */}
           <div className='hidden md:block text-secondary '>
-            <Link href='/' className="btn btn-ghost rounded-btn hover:text-primary">Home</Link>
-            <Link href='/aboutUs' className="btn btn-ghost rounded-btn hover:text-primary">About</Link>
+            <Link href='/' className="btn btn-ghost rounded-btn hover:scale-105 transition-transform">Home</Link>
+            <Link href='/aboutUs' className="btn btn-ghost rounded-btn hover:scale-105 transition-transform">About</Link>
           </div>
           {/**Modal menu for smaller screens */}
           {/* Open the modal using document.getElementById('ID').showModal() method */}
           <div className="block md:hidden">
-            <button className="btn bg-base-300 border-0 px-4" onClick={() => document.getElementById('my_modal_2').showModal()}>
+            <button className="bg-transparent shadow-none p-4" onClick={() => document.getElementById('my_modal_2').showModal()}>
               {/* hamburger icon */}
-              <svg className=" fill-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
+              <svg className=" fill-secondary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
             </button>
             <dialog id="my_modal_2" className="modal">
               <div className="modal-box">

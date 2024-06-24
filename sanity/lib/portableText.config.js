@@ -6,7 +6,7 @@ import SharePost from "@/app/components/sharePost"
 import Link from "next/link"
 
 function BlockquoteComponent({ children }) {
-    return <blockquote className='border-primary'>{children}</blockquote>
+    return <blockquote className='border-secondary'>{children}</blockquote>
 }
 function LinkComponent(props) {
     const { children, value } = props

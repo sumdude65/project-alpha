@@ -5,13 +5,13 @@ import { useState } from "react"
 /**Allows the user easily switch out preferred theme */
 
 export default function ThemeController() {
-    const [theme, setTheme] = useState('garden')
+    const [theme, setTheme] = useState('acid')
     function handleClick() {
-        if (theme === 'garden') setTheme('business')
-        if (theme === 'business') setTheme('garden')
+        if (theme === 'acid') setTheme('business')
+        if (theme === 'business') setTheme('acid')
     }
     return (
-        <label className="swap swap-rotate text-secondary hover:text-primary">
+        <label className="swap swap-rotate text-secondary hover:scale-105 transition-transform">
 
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" className="theme-controller" value={theme} onClick={handleClick} />

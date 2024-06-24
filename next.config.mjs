@@ -14,6 +14,18 @@ const nextConfig = {
           },
         ],
       },
+      experimental:{
+        taint:true,
+      },
+      async redirects() {
+        return [
+          {
+            source: '/blog', // The path to match
+            destination: '/', // The path to redirect to
+            permanent: true, // Indicates if the redirect is permanent (308) or temporary (307)
+          },
+        ]
+      }
 };
 
 export default nextConfig;

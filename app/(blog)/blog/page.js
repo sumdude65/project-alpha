@@ -1,4 +1,6 @@
-/**REMEBER TO REDIRECT THIS PAGE TO THE HOMEPAGE */
+/**This page is automatically redirected to the homepage, configured in next.config file
+ * Do not touch anything
+ */
 
 
 export default async function Blog() {

@@ -13,7 +13,7 @@ const EmbedVideo = ({ platform, videoUrl }) => {
             width="560"
             height="315"
             style={{ border: 'none', overflow: 'hidden' }}
-            allowTransparency="true"
+            allowtransparency="true"
             allow="encrypted-media"
             allowFullScreen={true}
           ></iframe>

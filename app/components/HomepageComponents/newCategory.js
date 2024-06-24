@@ -1,10 +1,11 @@
-import { client } from '@/sanity/lib/client'
-import Link from 'next/link'
 import PostWithImage from '../postWithImagePreview'
+import { sanityFetch } from '@/sanity/lib/fetch'
+import { RECENT_POSTS } from '@/sanity/lib/queries'
+
 export default async function NewCategory() {
-    {/**Fetch posts published from the past 14 days, _updatedAt time gives the best representation of publishing time */ }
-    const posts = await client.fetch(`*[ _type == "post" && dateTime(_updatedAt) > dateTime(now()) - 60*60*24*14] | order(_updatedAt desc){
-        _id,title,mainImage}`,{}, { next: { revalidate: 3600 } })
+    const posts = await sanityFetch({
+        query:RECENT_POSTS,
+    })
     return (
         <div>
             {!posts ? "loading..." :
