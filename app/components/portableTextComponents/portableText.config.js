@@ -19,7 +19,7 @@ function LinkComponent(props) {
 }
 function ShareAnnotation(props) {
     const { value } = props
-    const { url, title } = value //specified in queries
+    const { url, title } = value //specified in @sanity/lib/queries
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
     return <SharePost
         postTitle={title}
