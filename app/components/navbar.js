@@ -27,19 +27,31 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollTop]);
 
+  //for theme state
+  const [theme, setTheme] = useState('acid')
+  function changeTheme() {
+        if (theme === 'acid') setTheme('business')
+        if (theme === 'business') setTheme('acid')
+    }
 
   return (
-    <nav className="navbar bg-purple-100 box px-5 top-0 sticky z-50 transition-opacity border-b-2 border-secondary customWidth100"
+    <nav className="navbar bg-base-300 box px-5 top-0 sticky z-50 transition-opacity border-b-2 border-secondary customWidth100"
       style={{ opacity: navbarOpacity }}
     >
       <div className="lg:flex-none">
         <Link href='/'>
-          <Image 
+         { theme === 'acid' && <Image 
           className=" not-prose" 
-          src='/quikgist2.0.svg' 
-          width={125} 
-          height={125} 
-          alt='logo' />
+          src='/quikgist3.0.svg' 
+          width={250} 
+          height={80} 
+          alt='logo' /> }
+          { theme === 'business' && <Image 
+          className=" not-prose" 
+          src='/quikgist4.0.svg' 
+          width={250} 
+          height={80} 
+          alt='logo' /> }
         </Link>
       </div>
       <div className="flex justify-end flex-1">
@@ -71,7 +83,7 @@ export default function Navbar() {
           </div>
 
         </div>
-        <ThemeController />
+        <ThemeController theme={theme} changeTheme={changeTheme}/>
       </div>
     </nav>
   )

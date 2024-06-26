@@ -18,8 +18,8 @@ import {
     RedditIcon
 } from 'react-share';
 
-const ShareButtons = ({ title }) => {
-    const url = usePathname()
+const ShareButtons = ({ title, path }) => {
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${path}`
     return (
         <div >
             <h5 className=''>Share with Friends:</h5>

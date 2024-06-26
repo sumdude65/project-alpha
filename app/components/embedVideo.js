@@ -36,9 +36,9 @@ const EmbedVideo = ({ platform, videoUrl }) => {
   };
 
   return (
-    <div>
+    <>
       {renderEmbedCode()}
-    </div>
+    </>
   );
 };
 

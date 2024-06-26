@@ -1,8 +1,20 @@
+import ShortIdInput from "../fieldComponents/shortId"
+
 export const post = {
   name: 'post',
   title: 'Post',
   type: 'document',
   fields: [
+    {
+      name: "shortId",
+      title: "ShortId",
+      type: "string",
+      description:"This is automatically generated for easy sharing of new posts",
+      readOnly: true,
+      components:{
+        input: ShortIdInput,
+      }
+    },
     {
       name: 'title',
       title: 'Title',

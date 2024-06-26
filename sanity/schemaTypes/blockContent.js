@@ -88,9 +88,9 @@ export const blockContent = {
                 type: "reference",
                 to:[
                   {
-                    type: "post"
+                    type: "post",
                   }
-                ]
+                ],
               }
             ],
             components:{

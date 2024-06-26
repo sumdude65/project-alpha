@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
-import { client } from '@/sanity/lib/client';
 import { PortableText } from '@portabletext/react';
-import { portableTextComponents } from '@/sanity/lib/portableText.config';
+import { portableTextComponents } from '@/app/components/portableTextComponents/portableText.config';
 import DateController from '@/app/components/dateController';
 import ImageComponent from '@/app/components/imageComponent';
 import ShareButtons from '@/app/components/shareButtons';
@@ -18,7 +17,7 @@ export async function generateStaticParams() {
 
     return posts.map((post) => {
         return {
-            postId: post._id
+            postId: post._id,
         }
     })
 }
@@ -29,7 +28,6 @@ export const dynamicParams = true;
 export default async function BlogPost({ params }) {
     //fetch the post
     const post = await sanityFetch({ query: POST_QUERY, params })
-
     if (!post) {
         return notFound()
     }     //redirect to 404 if the post doesn't exist
@@ -40,7 +38,7 @@ export default async function BlogPost({ params }) {
             <article className='flex flex-col max-sm:px-4'>
                 <h1 className='mt-4'>{post.title}</h1>
                 <DateController dateString={post.publishedAt} author={post.author} />
-                <ShareButtons title={post.title} />
+                <ShareButtons title={post.title} path={post.shortId}/>
                 {
                     <ImageComponent value={post.mainImage} />
                 }

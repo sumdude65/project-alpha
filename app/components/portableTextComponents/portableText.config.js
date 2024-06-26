@@ -19,8 +19,7 @@ function LinkComponent(props) {
 }
 function ShareAnnotation(props) {
     const { value } = props
-    console.log();
-    const { url, title } = value
+    const { url, title } = value //specified in queries
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
     return <SharePost
         postTitle={title}

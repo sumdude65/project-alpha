@@ -1,6 +1,6 @@
 import ImageComponent from "@/app/components/imageComponent"
 import { client } from "@/sanity/lib/client"
-import { portableTextComponents } from "@/sanity/lib/portableText.config"
+import { portableTextComponents } from "@/app/components/portableText.config"
 import { PortableText } from "next-sanity"
 import { notFound } from "next/navigation"
 

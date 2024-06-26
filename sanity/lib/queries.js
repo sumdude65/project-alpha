@@ -9,7 +9,7 @@ export const RECENT_POSTS = groq`*[ _type == "post" && dateTime(_updatedAt) > da
         _id,title,mainImage}`
 
 //This fetch is faulty because it assumes all internalLinks are directed to authors, create an annotation for authors and true internal links
-export const POST_QUERY = groq`*[ _id == $postId ][0]{
+export const POST_QUERY = groq`*[ _type == "post" && ( _id == $postId || shortId == $postId) ][0]{
         body[]{
             ...,
             markDefs[]{
@@ -18,7 +18,7 @@ export const POST_QUERY = groq`*[ _id == $postId ][0]{
                 "url": @.reference->_id
                 },
                 _type == "share" => {
-                "url": @.reference->_id,
+                "url": @.reference->shortId,
                 "title":@.reference->title
                 }
             }   
@@ -26,5 +26,6 @@ export const POST_QUERY = groq`*[ _id == $postId ][0]{
         author->,
         title,
         publishedAt,
-        mainImage
+        mainImage,
+        shortId
     }`;
