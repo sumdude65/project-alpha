@@ -6,6 +6,7 @@ import "../../styles/globals.css"
 const inter = Inter({ subsets: ["latin"] });
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
   title: "QuikGist",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         {draftMode().isEnabled && <VisualEditing />}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-CHFQTSV073" />
     </html>
   );
 }

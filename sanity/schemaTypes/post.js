@@ -9,9 +9,9 @@ export const post = {
       name: "shortId",
       title: "ShortId",
       type: "string",
-      description:"This is automatically generated for easy sharing of new posts",
+      description: "This is automatically generated for easy sharing of new posts",
       readOnly: true,
-      components:{
+      components: {
         input: ShortIdInput,
       }
     },
@@ -40,7 +40,7 @@ export const post = {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     },
     {
       name: 'mainImage',
@@ -61,7 +61,18 @@ export const post = {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    },
+    {
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'array',
+      description: "Single words that easily describe this post. E.g Computers, Students, Crypto",
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+      validation: Rule => Rule.required().min(3).max(6).error("Enter atleast 3 keywords")
     },
     {
       name: 'publishedAt',
@@ -82,8 +93,8 @@ export const post = {
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 }

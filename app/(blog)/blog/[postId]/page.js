@@ -33,6 +33,7 @@ export async function generateMetadata({ params }) {
     return {
       title: post.title,
       description: post.description,
+      keywords: post.keywords,
       openGraph: {
         title: post.title,
         description: post.description,
@@ -53,6 +54,19 @@ export async function generateMetadata({ params }) {
         title: post.title,
         description: post.description,
         image: urlForImage(asset),
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: false,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
       },
     };
   }
