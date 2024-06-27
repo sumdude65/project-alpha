@@ -5,12 +5,13 @@ export default function Footer() {
     return (
         <footer className="footer p-10 bg-secondary text-neutral-content  customWidth100 ">
             <aside>
-                <Image src='/quikgist2.0.svg'
-                    alt="footer image"
-                    width={125}
-                    height={125}
-                    />
-                <p>QuikGist Ltd.<br /></p>
+                <Image
+                    className=" not-prose"
+                    src='/quikgist4.0.svg'
+                    width={250}
+                    height={80}
+                    alt='logo' />
+                <p className="pl-2">QuikGist Ltd.<br /></p>
             </aside>
             <nav>
                 <h6 className="footer-title">Social</h6>

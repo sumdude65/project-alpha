@@ -7,6 +7,7 @@ import ShareButtons from '@/app/components/shareButtons';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { METADATA_QUERY, POSTS_QUERY, POST_QUERY } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
+import Keywords from '@/app/components/keywordsComponent';
 
 //generate static pages already in the dataset
 export async function generateStaticParams() {
@@ -80,12 +81,13 @@ export default async function BlogPost({ params }) {
     }     //redirect to 404 if the post doesn't exist
 
     return (
-        <main className='grid md:grid-cols-[1fr_65%_1fr] customWidth100'> {/**defines the main layout of the blog using grid */}
+        <main className='grid md:grid-cols-[1fr_65%_1fr] customWidth100'> {/**defines the main layout of the post using grid */}
             <div className='hidden md:block'>{/**Reserved for ads, element hidden from small screens*/}</div>
             <article className='flex flex-col max-sm:px-4'>
                 <h1 className='mt-4'>{post.title}</h1>
                 <DateController dateString={post.publishedAt} author={post.author} />
                 <ShareButtons title={post.title} path={post.shortId} />
+                <Keywords keywords={post.keywords || []} />
                 {
                     <ImageComponent value={post.mainImage} />
                 }
