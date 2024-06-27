@@ -30,6 +30,13 @@ export const post = {
       },
     },
     {
+      name: "description",
+      title: "Description",
+      type: "string",
+      description: "A very short highlight of the article. Make it captivating! This is used to attract a reader's attention to click on the post and read more.",
+      validation: Rule => Rule.required().max(50).error("This field shouldn't be longer than 50 characters")
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
