@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 
 /**This component allows us to embed videos from supported platforms in our posts */
