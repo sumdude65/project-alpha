@@ -111,7 +111,8 @@ export const blockContent = {
                   list:[
                     { title: "Facebook", value:"facebook" },
                     { title: "Instagram", value:"instagram" },
-                    { title: "Tiktok", value:"tiktok" }
+                    { title: "Tiktok", value:"tiktok" },
+                    { title: "X(twitter)", value:"twitter" }
                   ],
                   },
                 initialValue: "facebook",

@@ -2,7 +2,19 @@ import React from 'react';
 
 /**This component allows us to embed videos from supported platforms in our posts */
 
+import { useEffect } from 'react';
+
 const EmbedVideo = ({ platform, videoUrl }) => {
+  useEffect(() => {
+    if (platform === 'twitter') {
+      const script = document.createElement('script');
+      script.src = 'https://platform.twitter.com/widgets.js';
+      script.async = true;
+      script.charset = 'utf-8';
+      document.body.appendChild(script);
+    }
+  }, [platform]);
+
   const renderEmbedCode = () => {
     switch (platform) {
       case 'facebook':
@@ -30,6 +42,12 @@ const EmbedVideo = ({ platform, videoUrl }) => {
             <iframe src={`${videoUrl}embed`} style={{ width: '100%', height: '600px', display: 'block', maxWidth: '100%' }}></iframe>
           </blockquote>
         );
+      case 'twitter':
+        return (
+          <blockquote className="twitter-tweet">
+            <a href={videoUrl}></a>
+          </blockquote>
+        );
       default:
         return <p>Unsupported platform</p>;
     }
@@ -41,5 +59,6 @@ const EmbedVideo = ({ platform, videoUrl }) => {
     </>
   );
 };
+
 
 export default EmbedVideo;
