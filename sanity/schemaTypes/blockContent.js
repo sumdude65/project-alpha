@@ -10,7 +10,7 @@
  */
 
 import { ShareIcon, UserIcon } from "@sanity/icons"
-import { EmbedVideoRenderer, InternalLinkRenderer, ShareRenderer } from "../lib/annotationRenderer"
+import { InternalLinkRenderer, ShareRenderer } from "../lib/annotationRenderer"
 
 export const blockContent = {
   title: 'Block Content',
@@ -86,64 +86,61 @@ export const blockContent = {
               {
                 name: "reference",
                 type: "reference",
-                to:[
+                to: [
                   {
                     type: "post",
                   }
                 ],
               }
             ],
-            components:{
+            components: {
               annotation: ShareRenderer,
             }
 
           },
-          {
-            title: 'embedVideo',
-            name: 'embedVideo',
-            type: 'object',
-            fields: [
-              {
-                title: 'platform',
-                name: 'platform',
-                type: 'string',
-                options:{
-                  list:[
-                    { title: "Facebook", value:"facebook" },
-                    { title: "Instagram", value:"instagram" },
-                    { title: "Tiktok", value:"tiktok" },
-                    { title: "X(twitter)", value:"twitter" }
-                  ],
-                  },
-                initialValue: "facebook",
-                fieldset: "additionalInfo"
-              },
-              {
-                title: 'videoUrl',
-                name: 'videoUrl',
-                type: 'url',
-                fieldset: "additionalInfo",
-                validation: Rule => Rule.required().error('Additional Info is required.')
-              },
-            ],
-            fieldsets: [
-              {
-                name: 'additionalInfo',
-                title: 'Video Details',
-                options: {
-                  collapsible: false,
-                  collapsed: false,
-                  columns: 2, // Adjust the number of columns as needed
-                },
-                description: 'Please ensure that the platform matches the video link.',
-              },
-            ],
-            components:{
-              annotation: EmbedVideoRenderer
-            }
-          },
         ],
       },
+    },
+    {
+      title: 'Embed Social Post',
+      name: 'embedPost',
+      type: 'object',
+      fields: [
+        {
+          title: 'platform',
+          name: 'platform',
+          type: 'string',
+          options: {
+            list: [
+              { title: "Facebook", value: "facebook" },
+              { title: "Instagram", value: "instagram" },
+              { title: "Tiktok", value: "tiktok" },
+              { title: "X(twitter)", value: "twitter" }
+            ],
+          },
+          initialValue: "facebook",
+          fieldset: "additionalInfo"
+        },
+        {
+          title: 'Url',
+          name: 'postUrl',
+          type: 'url',
+          fieldset: "additionalInfo",
+          validation: Rule => Rule.required().error('Additional Info is required.')
+        },
+      ],
+      fieldsets: [
+        {
+          name: 'additionalInfo',
+          title: 'Post Details',
+          options: {
+            collapsible: false,
+            collapsed: false,
+            columns: 2, // Adjust the number of columns as needed
+          },
+          description: 'Please ensure that the platform matches the Url.',
+        },
+      ],
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array

@@ -23,13 +23,4 @@ export function ShareRenderer(props){
     )
 }
 
-export function EmbedVideoRenderer(props){
-    return (
-        <span>
-            {props.renderDefault(props)}
-            <a contentEditable={false} href={props.value.href}>
-                <DocumentVideoIcon />
-            </a>
-        </span>
-    )
-}
+

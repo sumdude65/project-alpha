@@ -1,6 +1,6 @@
 /**Custom styling for portable text components */
 
-import EmbedVideo from "@/app/components/embedVideo"
+import EmbedPost from "@/app/components/embedPost"
 import ImageComponent from "@/app/components/imageComponent"
 import SharePost from "@/app/components/sharePost"
 import Link from "next/link"
@@ -38,9 +38,9 @@ function InternalLinkAnnotation(props) {
     )
 }
 
-function EmbedVideoAnnotation({value}){
-    const {platform, videoUrl} = value
-    return <EmbedVideo platform={platform} videoUrl={videoUrl}  />
+function EmbedPostType({value}){
+    const {platform, postUrl} = value
+    return <EmbedPost platform={platform} postUrl={postUrl}  />
 }
 
 /** Define custom styling for portable text elements
@@ -50,6 +50,7 @@ function EmbedVideoAnnotation({value}){
 export const portableTextComponents = {
     types: {
         image: ImageComponent,
+        embedPost: EmbedPostType,
     },
     block: {
         blockquote: BlockquoteComponent,
@@ -58,6 +59,5 @@ export const portableTextComponents = {
         link: LinkComponent,
         share: ShareAnnotation,
         internalLink: InternalLinkAnnotation,
-        embedVideo: EmbedVideoAnnotation,
     }
 }
